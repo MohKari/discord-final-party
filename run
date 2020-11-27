@@ -3,7 +3,6 @@
 // composer autoloader
 include __DIR__.'/autoload.php';
 
-use Classes\Raffle;
 use Commands\Commands;
 use Discord\DiscordCommandClient;
 use Helpers\Helper;
@@ -16,9 +15,6 @@ $discord = new DiscordCommandClient([
 
 // becomes discord object
 $object;
-
-// create raffle here so that its a global object...
-$raffle = new Raffle();
 
 /**
  * when bot is "started", this methods runs.

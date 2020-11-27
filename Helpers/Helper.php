@@ -91,11 +91,6 @@ class Helper{
     // NEW //
     /////////
 
-    public static function getRaffle()
-    {
-        return $GLOBALS["raffle"];
-    }
-
     public static function getObject()
     {
         return $GLOBALS["object"];

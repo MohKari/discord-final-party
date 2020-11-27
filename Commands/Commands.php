@@ -2,7 +2,6 @@
 
 namespace Commands;
 
-use Classes\Raffle;
 use Discord\DiscordCommandClient;
 
 class Commands{
@@ -18,14 +17,9 @@ class Commands{
 	 * @var [type]
 	 */
 	public $commands = [
-		"Commands\\DemoCommand",		// demo
-		"Commands\\GroupBuddies",		// group up buddies
-		"Commands\\NewRaffle",			// create new raffle
-		"Commands\\AddToRaffle",		// add user to raffle
-		"Commands\\RemoveFromRaffle",	// remove user from raffle
-		"Commands\\ShowRaffle",			// show raffle
-		"Commands\\DrawFromRaffle",		// show raffle
-		"Commands\\LazyDraw",			// lazy raffle...
+		"Commands\\DemoCommand",
+		"Commands\\SignUp",
+		"Commands\\Staging",
 	];
 
 	/**

@@ -8,11 +8,11 @@
         "symfony/var-dumper": "^5.1"
     },
     "autoload": {
-    	// add "my" autoload to the composer...
     	"psr-4": {
       		"Classes\\":"Classes/",
       		"Commands\\":"Commands/",
-      		"Helpers\\":"Helpers/"
+      		"Helpers\\":"Helpers/",
+          "Services\\":"Services/"
     	}
   	}
 }
