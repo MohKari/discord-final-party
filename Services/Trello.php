@@ -81,7 +81,7 @@ class Trello{
         if($error){
 
         	// ddd($error, false);
-        	throw new \Exception(error);
+        	throw new \Exception($error);
 
         }else{
 
@@ -130,7 +130,7 @@ class Trello{
 	public function addName($card_id, $name){
 
 		$this->request = "PUT";
-		$this->url = "cards/" . $card_id . "?key={key}&token={token}&name=" . $name;
+		$this->url = "cards/" . $card_id . "?key={key}&token={token}&name=" . urlencode($name);
 
 		$this->curlInit();
 
