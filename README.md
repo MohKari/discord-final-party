@@ -1,4 +1,9 @@
-# Discord-Raffle-Bot
+# Discord-Final-Party
+
+## What Is This?
+
+This is a simple integration between a discord server and a Trello board.
+- Discord is used to issue commands to Trello
 
 ## Set-Up
 
