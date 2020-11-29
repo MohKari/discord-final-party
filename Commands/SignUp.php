@@ -20,11 +20,11 @@ class SignUp extends BaseCommand{
 
         return function($data, $params){
 
-            // for messages, "new", "signed up", "already signed up"
-            $state = "";
-
             // convert author to my member...
             $member = new Member($data->author);
+
+            // I think your this person...
+            // ddd($member->name, false);
 
             // new trello...
             $trello = new Trello();
@@ -43,7 +43,7 @@ class SignUp extends BaseCommand{
                     }
                 }
 
-                // if card id has not been found, make a new card
+                // user doesnt have a card...
                 if($found_card == false){
 
                     // make new card
@@ -62,15 +62,30 @@ class SignUp extends BaseCommand{
                     $trello->moveCard($card_id, en("SIGN_UP_LIST"));
 
                     // new state
-                    return "Its your first time? Don't worry, I'll look after you. ( If its not your first time signing up, the bot has made a hiccup... )";
+                    return "it's your first time? Don't worry, I'll look after you " . $member->name . ".";
 
-                // if card is currently in member list, move it to sign up
+                // users card is waiting to be signed up
                 }else if($found_card->idList == en("MEMBER_LIST")){
-
-                    $state = "signed up";
 
                     $trello->moveCard($found_card->id, en("SIGN_UP_LIST"));
 
+                    // sucessfully signed up messages
+                    $array = [
+                        "you son of a... You're in!",
+                        "well, look who decided to sign up!",
+                        "it's about time you did your part.",
+                        "now sashay away",
+                        "all aboard the chuchu train~",
+                        "I always knew this day would come.",
+                        "tonight ( or tomorrow? ) we dine in hell!",
+                        "do you have plans for after the war? A few friends of mine are... Oh, you have plans...",
+                        "I look forward to seeing your blood on the battlefield.",
+                        "fresh meat for the ginder",
+                    ];
+
+                    return $array[array_rand($array)];
+
+                // user is already signed up or in party
                 }else{
 
                     // messages for when you are already signed up
@@ -91,22 +106,6 @@ class SignUp extends BaseCommand{
                 ddd($e->getMessage(), false);
                 return "sign-up error, poke MohKari.";
             }
-
-            // sucessfully signed up messages
-            $array = [
-                "you son of a... You're in!",
-                "well, look who decided to sign up!",
-                "it's about time you did your part.",
-                "now sashay away",
-                "all aboard the chuchu train~",
-                "I always knew this day would come.",
-                "tonight ( or tomorrow? ) we dine in hell!",
-                "do you have plans for after the war? A few friends of mine are... Oh, you have plans...",
-                "I look forward to seeing your blood on the battlefield.",
-                "fresh meat for the ginder",
-            ];
-
-            return $array[array_rand($array)];
 
         };
 

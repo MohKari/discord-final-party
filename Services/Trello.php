@@ -80,12 +80,10 @@ class Trello{
         // if any errors, set these properties
         if($error){
 
-        	// ddd($error, false);
         	throw new \Exception($error);
 
         }else{
 
-        	// ddd($response, false);
         	$this->state = "success";
         	$this->data = json_decode($response);
 
