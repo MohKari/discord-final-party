@@ -18,6 +18,7 @@ class Commands{
 	 */
 	public $commands = [
 		"Commands\\DemoCommand",
+		"Commands\\Abort",
 		"Commands\\SignUp",
 		"Commands\\Staging",
 	];
