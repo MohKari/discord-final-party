@@ -81,7 +81,7 @@ class SignUp extends BaseCommand{
                         "do you have plans for after the war? A few friends of mine are... Oh, you have plans...",
                         "I look forward to seeing your blood on the battlefield.",
                         "fresh meat for the grinder.",
-                        "better in than out."
+                        "better in than out.",
                         "see you on the battlefield... or unless you're Zao who afks in base.",
                         "good luck out there, soldier.",
                         "glad to have you on board.",
