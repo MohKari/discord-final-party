@@ -24,7 +24,9 @@ class SignUp extends BaseCommand{
             $member = new Member($data->author);
 
             // I think your this person...
-            // ddd($member->name, false);
+            // ddd("sign-up", false);
+            // ddd($member, false);
+            // return "Sorry, I was trying to do something, but kind of ended up breaking this bot... So... Erm... Someone will need to manually move or create your card in Trello. <:pepeHeart:662681944659853323>";
 
             // new trello...
             $trello = new Trello();

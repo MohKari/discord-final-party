@@ -21,6 +21,7 @@ class Commands{
 		"Commands\\Abort",
 		"Commands\\SignUp",
 		"Commands\\Staging",
+		"Commands\\ChuckNorrisCommand",
 	];
 
 	/**
