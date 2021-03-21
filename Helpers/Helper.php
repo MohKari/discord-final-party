@@ -179,4 +179,34 @@ class Helper{
 
     }
 
+    /////////////
+    // UTILITY //
+    /////////////
+
+    /**
+     * Is now a bad time?
+     * @return boolean [description]
+     */
+    public static function isBadTime()
+    {
+
+        // get day
+        $day = date("l");;
+
+        // if day is Thursday or Sunday
+        if($day == "Thursday" || $day == "Sunday"){
+
+            // now as hour minutes, example 1815 or 2100
+            $now = gmdate("Hi");
+
+            if($now > 1815 && $now < 2000){
+                return true;
+            }
+
+        }
+
+        return false;
+
+    }
+
 }

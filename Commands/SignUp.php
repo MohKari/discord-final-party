@@ -21,6 +21,24 @@ class SignUp extends BaseCommand{
 
         return function($data, $params){
 
+            // you tried to run this command at a bad time
+            $bad_time = Helper::isBadTime();
+            if($bad_time == true){
+
+                // sucessfully signed up messages
+                $array = [
+                    "Hes making a list, hes checking it twice. No, hes not going to change it now!",
+                    "Parties have already been created, your going to have to YOLO!",
+                    "Glad you can join us, but you will have to find your own party.",
+                    "It was Springs idea to stop you from signing up! I'm innocent, I'm just doing what I've been told!",
+                ];
+
+                $response = $array[array_rand($array)] . PHP_EOL . "You can't 'sign up' on Thursday or Sunday between 6:45-8:00(GMT). Glad to have you with us if you can make it though!";
+
+                return $response;
+
+            }
+
             // convert author to my member...
             $member = new Member($data->author);
 

@@ -21,6 +21,24 @@ class Abort extends BaseCommand{
 
         return function($data, $params){
 
+            // you tried to run this command at a bad time
+            $bad_time = Helper::isBadTime();
+            if($bad_time == true){
+
+                // sucessfully signed up messages
+                $array = [
+                    "It's too late for that now, Armageddon is upon us! To Arms!",
+                    "Ha! You think you have a choice in war!?",
+                    "Ever heard of forced conscription?",
+                    "It's too late for that, the ship has already set sail!",
+                ];
+
+                $response = $array[array_rand($array)] . PHP_EOL . "You can't 'sign out' on Thursday or Sunday between 6:45-8:00(GMT). If you can't make it, don't worry though!";
+
+                return $response;
+
+            }
+
             // convert author to my member...
             $member = new Member($data->author);
 
