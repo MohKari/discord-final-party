@@ -9,11 +9,12 @@ use Services\Trello;
 
 class SignUp extends BaseCommand{
 
-    public $key_word = "sign-up";
+    public $key_word = "in";
+    public $aliasis = ["sign-up"];
 
     public $options = [
         "description" => "Sign up for GvG",
-        "usage" => "",
+        "usage" => "| sign-up",
     ];
 
     public function command(){

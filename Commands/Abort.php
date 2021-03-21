@@ -9,11 +9,12 @@ use Services\Trello;
 
 class Abort extends BaseCommand{
 
-    public $key_word = "abort";
+    public $key_word = "out";
+    public $aliasis = ["abort"];
 
     public $options = [
         "description" => "Leave current party / sign out.",
-        "usage" => "",
+        "usage" => " | abort",
     ];
 
     public function command(){

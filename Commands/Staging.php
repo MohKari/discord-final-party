@@ -8,11 +8,12 @@ use Services\Trello;
 
 class Staging extends BaseCommand{
 
-    public $key_word = "reset";
+    public $key_word = "end";
+    public $aliasis = ["reset"];
 
     public $options = [
         "description" => "Move all cards back to the 'Member List' - Admin Only",
-        "usage" => "",
+        "usage" => " | !reset",
     ];
 
     public function command(){
