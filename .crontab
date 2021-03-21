@@ -1,0 +1,3 @@
+# Auto reset on Thursday and Sunday at 7:55
+55 19 * * THU /usr/bin/php /discord-final-party-kaizen/run-kaizen-shogun-reset > /dev/null 2>&1
+55 19 * * SUN /usr/bin/php /discord-final-party-kaizen/run-kaizen-shogun-reset > /dev/null 2>&1

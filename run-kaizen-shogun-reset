@@ -1,0 +1,24 @@
+<?php
+
+// composer autoloader
+include __DIR__.'/autoload.php';
+
+use Services\Trello;
+
+// new trello...
+$trello = new Trello();
+
+try{
+
+    // check to see if any cards with their name already exist...
+    $trello->getCards();
+    $cards = $trello->data;
+
+    // move all cards to member list
+    foreach($cards as $card){
+       $trello->moveCard($card->id, en("MEMBER_LIST"));
+    }
+
+}catch(\Exception $e){
+    return "error: " . $e->message;
+}
