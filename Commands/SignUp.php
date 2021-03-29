@@ -33,7 +33,7 @@ class SignUp extends BaseCommand{
                     "It was Springs idea to stop you from signing up! I'm innocent, I'm just doing what I've been told!",
                 ];
 
-                $response = $array[array_rand($array)] . PHP_EOL . "You can't 'sign up' on Thursday or Sunday between 6:15-8:00(GMT). Glad to have you with us if you can make it though!";
+                $response = $array[array_rand($array)] . PHP_EOL . "You can't 'sign up' on Thursday or Sunday between 6:15-8:00(UTC). Glad to have you with us if you can make it though!";
 
                 return $response;
 

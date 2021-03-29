@@ -33,7 +33,7 @@ class Abort extends BaseCommand{
                     "It's too late for that, the ship has already set sail!",
                 ];
 
-                $response = $array[array_rand($array)] . PHP_EOL . "You can't 'sign out' on Thursday or Sunday between 6:15-8:00(GMT). If you can't make it, don't worry though!";
+                $response = $array[array_rand($array)] . PHP_EOL . "You can't 'sign out' on Thursday or Sunday between 6:15-8:00(UTC). If you can't make it, don't worry though!";
 
                 return $response;
 

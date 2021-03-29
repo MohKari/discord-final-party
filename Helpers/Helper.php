@@ -190,16 +190,18 @@ class Helper{
     public static function isBadTime()
     {
 
+        // get UTC date/time
+        $now = new \DateTime("now", new \DateTimeZone("UTC"));
+
         // get day
-        $day = date("l");;
+        $day = $now->format('l');
 
         // if day is Thursday or Sunday
         if($day == "Thursday" || $day == "Sunday"){
 
-            // now as hour minutes, example 1815 or 2100
-            $now = gmdate("Hi");
+        $time = $now->format('Hi');
 
-            if($now > 1815 && $now < 2000){
+            if($time > 1815 && $time < 2000){
                 return true;
             }
 
